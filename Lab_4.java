@@ -48,20 +48,11 @@ public class Lab_4{
 
   public void printWithCommas(int num){
     //displays num with commas inserted properly
-    if ((num%3==1)&&(num!=0)){
-      int numSeg=customMath.findDigit(num, customMath.countLength(num));
-      System.out.print(numSeg);
-      System.out.print(",");
-      
-      int newNum=num-numSeg*(int)customMath.power(10, customMath.countLength(num)-1);
-      printWithCommas(newNum);
-      
-    }else if (num !=0){
-      int numSeg=customMath.findDigit(num, customMath.countLength(num));
-      System.out.print(numSeg);
-
-      int newNum=num-numSeg*(int)customMath.power(10, customMath.countLength(num)-1);
-      printWithCommas(newNum);
+    int firstNum=customMath.findDigit(num, customMath.countLength(num));
+    int leftoverNum=num-firstNum*(int)customMath.power(10, customMath.countLength(num)-1);
+    if (num !=0){
+      System.out.print(firstNum);
+      printWithCommas(leftoverNum);
     }
   }
 
