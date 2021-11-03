@@ -48,9 +48,20 @@ public class Lab_4{
 
   public void printWithCommas(int num){
     //displays num with commas inserted properly
+
+    /*if %3 equals 0 or 2 (100.len%3=0, 10000.len%3=2), print first num
+      if %3 equals 1 (1000.len%3=1), print first num then comma
+      if %3 equals 2 (1000%3=2),
+    */
     int firstNum=customMath.findDigit(num, customMath.countLength(num));
     int leftoverNum=num-firstNum*(int)customMath.power(10, customMath.countLength(num)-1);
-    if (num !=0){
+
+    if (customMath.countLength(num)%3==1){
+      System.out.print(firstNum);
+      System.out.print(",");
+      printWithCommas(leftoverNum);
+    }else if (num!=0){
+      //TO DO: Make it so numbers ending in 0 still print correctly
       System.out.print(firstNum);
       printWithCommas(leftoverNum);
     }
