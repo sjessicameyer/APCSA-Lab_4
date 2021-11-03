@@ -56,10 +56,12 @@ public class Lab_4{
     int firstNum=customMath.findDigit(num, customMath.countLength(num));
     int leftoverNum=num-firstNum*(int)customMath.power(10, customMath.countLength(num)-1);
 
-    if (customMath.countLength(num)%3==1){
+    if ((customMath.countLength(num)%3==1)&&(leftoverNum!=0)){
       System.out.print(firstNum);
       System.out.print(",");
       printWithCommas(leftoverNum);
+    }else if (leftoverNum==0){
+      System.out.print(firstNum);
     }else if (num!=0){
       //TO DO: Make it so numbers ending in 0 still print correctly
       System.out.print(firstNum);
