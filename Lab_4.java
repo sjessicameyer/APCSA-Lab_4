@@ -51,11 +51,11 @@ public class Lab_4{
 
     /*if %3 equals 0 or 2 (100.len%3=0, 10000.len%3=2), print first num
       if %3 equals 1 (1000.len%3=1), print first num then comma
-      if %3 equals 2 (1000%3=2),
+      if %3 equals 2 (1000.len%3=2),
     */
-    int firstNum=customMath.findDigit(num, customMath.countLength(num));
+    int firstNum=num%(customMath.power(10, customMath.length(num)));
     int leftoverNum=num-firstNum*(int)customMath.power(10, customMath.countLength(num)-1);
-
+    customMath.
     if ((customMath.countLength(num)%3==1)&&(leftoverNum!=0)){
       System.out.print(firstNum);
       System.out.print(",");
@@ -67,6 +67,8 @@ public class Lab_4{
       System.out.print(firstNum);
       printWithCommas(leftoverNum);
     }
+
+
   }
 
 }
