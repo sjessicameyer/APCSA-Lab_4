@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import SarahLibrary.getInput;
-
 public class menu {
   private Scanner input;
   Lab_4 customRecursion = new Lab_4();
